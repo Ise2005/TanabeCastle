@@ -1,13 +1,156 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="module" src="src/App.jsx"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-4-1/css/5-4-1.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="src/App.css"/>
+
+    <script type="module" src="src/main.jsx"></script>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    
+    
+
+    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    
+    <title>田辺城のホームページ</title>
   </head>
+  
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <p class="title">田辺城の3D復元図</p>
+    <!--<img src="https://maizuru-kanko.net/wp/wp-content/uploads/2023/01/1D1A0219-1024x683.jpg" alt="城の画像" />-->
+    
+    <div class="main">
+      <ul class="tab">
+        <li><a href="#page1">見取り図</a></li>
+        <li><a href="#page2">モデル(城)</a></li>
+        <li><a href="#page3">モデル(石垣)</a></li>
+      </ul>
+      
+      <div id="page1" class="area">
+        <h2>見取り図</h2>
+        <ul>
+          <li>以下の図が田辺城の見取り図です。</li>
+        </ul>
+
+        <main>
+          <div class="LeftContent">
+          </div>
+
+          <div class="CenterContent">
+            <div class="img">
+              <img src="public/position.png" alt="見取り図">
+            </div>
+          </div>
+
+          <div class="RightContent">
+          </div>
+        </main>
+      </div>
+      
+      <div id="page2" class="area">
+        <h2>田辺城の3Dモデル</h2>
+        <ul>
+          <li>下のボタンで固定の位置に変更できます。</li>
+          <dev class="block">
+            <a class="btn btn-border">
+              <button id="top-button">前</button>
+            </a>
+            <a class="btn btn-border">
+              <button id="bottom-button">後</button>
+            </a>
+            <a class="btn btn-border">
+              <button id="right-button">右</button>
+            </a>
+            <a class="btn btn-border">
+              <button id="left-button">左</button>
+            </a>
+          </dev>    
+        </ul>
+
+        <main>
+          <div class="LeftContent">
+          </div>
+
+          <div class="CenterContent">
+            <model-viewer 
+            class="castle"
+            alt="3D"
+            src="public/castle.glb"
+            ios-src=""
+            ar 
+            camera-controls
+            shadow-intensity="1"
+            exposure="0.5"
+            camera-orbit ="45deg 90deg 50%">
+            </model-viewer>
+          </div>
+
+          <div class="RightContent">
+          </div>
+        </main>
+      </div>
+
+      <div id="page3" class="area">
+        <h2>田辺城石垣の3Dモデル</h2>
+        <ul>
+          <li>下のボタンで固定の位置に変更できます。</li>
+          <dev class="block">
+            <a class="btn btn-border">
+              <button id="top-button">前</button>
+            </a>
+            <a class="btn btn-border">
+              <button id="bottom-button">後</button>
+            </a>
+            <a class="btn btn-border">
+              <button id="right-button">右</button>
+            </a>
+            <a class="btn btn-border">
+              <button id="left-button">左</button>
+            </a>
+          </dev>    
+        </ul>
+
+        <main>
+          <div class="LeftContent">
+          </div>
+
+          <div class="CenterContent">
+            <div class="castle">
+              <model-viewer 
+              alt="3D"
+              src="public/castle.glb"
+              ios-src=""
+              ar 
+              camera-controls
+              shadow-intensity="1"
+              exposure="0.5"
+              camera-orbit ="45deg 90deg 50%">
+            </model-viewer>
+            </div>
+          </div>
+
+          <div class="RightContent">
+          </div>
+        </main>
+      </div>
+    </div>
+
+    
+
+    <p style="text-align:right" style="margin:50%">
+      <a href="https://ja.wikipedia.org/wiki/%E7%94%B0%E8%BE%BA%E5%9F%8E_(%E4%B8%B9%E5%BE%8C%E5%9B%BD)" >田辺城のWikipedia</a>
+    </p>
   </body>
 </html>
